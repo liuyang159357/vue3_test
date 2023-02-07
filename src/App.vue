@@ -1,17 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <AA v-if="isShowAA">
+ <template>
+  <h3>你好</h3>
+ </template>
+    
+ 
+  </AA>
+  <hr>
+  <button @click="isShowAA = !isShowAA">切换隐藏</button>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import AA from "./components/A.vue";
+import { ref } from "vue";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: { AA },
+  data() {
+    return {};
+  },
+  setup() {
+    let isShowAA = ref(true);
+    return { isShowAA };
+  },
+  
+};
 </script>
 
 <style>
